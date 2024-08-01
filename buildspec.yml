@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login --no-include-email --region us-east-2
+      - aws ecr get-authorization-token --region us-east-2
       - REPOSITORY_URI=363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
