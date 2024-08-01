@@ -17,4 +17,5 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:latest
+      - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:$IMAGE_TAG
+      #- docker push $REPOSITORY_URI:$IMAGE_TAG
