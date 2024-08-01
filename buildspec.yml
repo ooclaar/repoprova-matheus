@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - docker build -t repoprova-matheus .
-      - docker tag repoprova-matheus:v1 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:v1
+      - docker tag repoprova-matheus:latest 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:v1
   post_build:
     commands:
       - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:v1
