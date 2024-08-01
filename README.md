@@ -11,4 +11,4 @@ Passos desenvolvidos:
 3 - Criação de uma aplicação do ElasticBeanstalk
     - Aqui tive dificuldades e não consegui evoluir com a disponibilização do ambiente.
 
-Considerações: Ao inves do ElasticBeanstalk, poderia ter utilizado o ECS ou EKS, o que poderia me ajudar a poupar tempo. Também poderia ter configurado a pipeline através do GitHub Actions, e só apontar para o destino na AWS. Outro ponto seria consolidar todos
+Considerações: Ao inves do ElasticBeanstalk, poderia ter utilizado o ECS ou EKS, o que poderia me ajudar a poupar tempo. Também poderia ter configurado a pipeline através do GitHub Actions, e só apontar para o destino na AWS. Outro ponto seria consolidar todas as configurações feitas em arquivos Terraform, garantindo assim a reusabilidade.
