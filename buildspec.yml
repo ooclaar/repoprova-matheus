@@ -12,7 +12,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t repoprova-matheus .
-      - docker tag repoprova-matheus:latest 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:latest
+      - docker tag repoprova-matheus:$IMAGE_TAG 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
