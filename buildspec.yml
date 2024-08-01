@@ -3,7 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-authorization-token --region us-east-2
+      # - aws ecr get-authorization-token --region us-east-2
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 363838752048.dkr.ecr.us-east-2.amazonaws.com
       - REPOSITORY_URI=363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus
   build:
     commands:
