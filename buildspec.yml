@@ -11,11 +11,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker build -t repoprova-matheus .
+      - docker tag repoprova-matheus:latest 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:latest
