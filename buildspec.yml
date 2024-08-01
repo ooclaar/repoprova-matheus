@@ -5,12 +5,11 @@ phases:
     commands:
       - aws ecr get-authorization-token --region us-east-2
       - REPOSITORY_URI=363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus
-      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
-      - docker build -t repoprova-matheus:$CODEBUILD_RESOLVED_SOURCE_VERSION .
-      - docker tag repoprova-matheus:$CODEBUILD_RESOLVED_SOURCE_VERSION 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker build -t repoprova-matheus .
+      - docker tag repoprova-matheus:v1 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:v1
   post_build:
     commands:
-      - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push 363838752048.dkr.ecr.us-east-2.amazonaws.com/repoprova-matheus:v1
       #- docker push $REPOSITORY_URI:$IMAGE_TAG
